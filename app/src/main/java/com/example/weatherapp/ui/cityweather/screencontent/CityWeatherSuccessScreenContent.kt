@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.weatherapp.R
+import com.example.design.R as DesignR
 import com.example.weatherapp.ui.cityweather.CityWeather
 import com.example.weatherapp.ui.cityweather.CityWeatherScreenEvent
 
@@ -26,7 +26,7 @@ fun CityWeatherSuccessScreenContent(
     weather: CityWeather,
     onEvent: (CityWeatherScreenEvent) -> Unit
 ) {
-    val updateText = stringResource(id = R.string.update)
+    val updateText = stringResource(id = DesignR.string.update)
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween,

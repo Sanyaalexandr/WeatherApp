@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "WeatherApp"
 include(":app")
- 
+include(":features:city-list")
+include(":design")

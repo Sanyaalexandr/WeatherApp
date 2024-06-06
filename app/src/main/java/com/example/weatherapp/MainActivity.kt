@@ -21,7 +21,7 @@ import com.example.weatherapp.ui.citieslist.CitiesListDestination
 import com.example.weatherapp.ui.citieslist.CitiesListScreen
 import com.example.weatherapp.ui.cityweather.CityWeatherDestination
 import com.example.weatherapp.ui.cityweather.CityWeatherScreen
-import com.example.weatherapp.ui.theme.WeatherAppTheme
+import com.example.design.theme.WeatherAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

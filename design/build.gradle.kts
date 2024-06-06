@@ -1,26 +1,17 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("com.google.dagger.hilt.android")
-    id("org.jetbrains.kotlin.kapt")
-    id ("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
-    namespace = "com.example.weatherapp"
+    namespace = "com.example.design"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.weatherapp"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -45,16 +36,9 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
-
-    implementation(project(":design"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -71,21 +55,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.kotlinx.serialization.core.jvm)
-
-    //Hilt
-    implementation (libs.hilt.android)
-    kapt (libs.hilt.compiler)
-    implementation(libs.androidx.hilt.navigation.compose)
-
-    //Ktor
-    implementation (libs.ktor.client.core)
-    implementation (libs.ktor.client.android)
-    implementation (libs.ktor.client.serialization)
-    implementation (libs.ktor.client.logging)
-    implementation (libs.logback.classic)
-
-    implementation (libs.kotlinx.serialization.json)
 }

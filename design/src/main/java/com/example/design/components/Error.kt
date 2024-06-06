@@ -1,4 +1,4 @@
-package com.example.weatherapp.ui.components
+package com.example.design.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,8 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.weatherapp.R
-import com.example.weatherapp.ui.citieslist.CitiesListScreenEvent
+import com.example.design.R
 
 @Composable
 fun Error(

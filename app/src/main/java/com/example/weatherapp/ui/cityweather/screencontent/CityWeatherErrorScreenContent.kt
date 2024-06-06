@@ -3,7 +3,7 @@ package com.example.weatherapp.ui.cityweather.screencontent
 import androidx.compose.runtime.Composable
 import com.example.weatherapp.ui.citieslist.CitiesListScreenEvent
 import com.example.weatherapp.ui.cityweather.CityWeatherScreenEvent
-import com.example.weatherapp.ui.components.Error
+import com.example.design.components.Error
 
 @Composable
 fun CityWeatherErrorScreenContent(
