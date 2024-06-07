@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("com.google.dagger.hilt.android")
-    id("org.jetbrains.kotlin.kapt")
-    id ("org.jetbrains.kotlin.plugin.serialization")
+    alias(libs.plugins.daggerHiltAndroid)
+    alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.kotlinKapt)
 }
 
 android {
@@ -60,9 +60,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.kotlinx.serialization.core.jvm)
 
     //Hilt
     implementation (libs.hilt.android)

@@ -1,7 +1,5 @@
 [versions]
 agp = "8.3.2"
-coilCompose = "2.6.0"
-converterGson = "2.9.0"
 hiltAndroidVersion = "2.51.1"
 hiltNavigationCompose = "1.2.0"
 kotlin = "1.9.0"
@@ -19,13 +17,8 @@ ktorClientSerialization = "1.6.3"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.9.0"
 composeBom = "2023.08.00"
-kotlinxCollectionsImmutable = "0.3.7"
 logbackClassic = "1.2.3"
-moshi = "1.12.0"
-moshiKotlin = "1.12.0"
 navigationCompose = "2.8.0-beta02"
-retrofit = "2.9.0"
-okhttp = "4.12.0"
 appcompat = "1.6.1"
 material = "1.12.0"
 jetbrainsKotlinJvm = "1.9.0"
@@ -34,8 +27,6 @@ jetbrainsKotlinJvm = "1.9.0"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterGson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidVersion" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroidVersion" }
@@ -60,11 +51,6 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorCli
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorClientLogging" }
 ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktorClientSerialization" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
-moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
-okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
@@ -73,4 +59,6 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
-
+daggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroidVersion"}
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinSerialization"}
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin"}

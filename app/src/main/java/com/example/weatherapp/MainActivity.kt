@@ -17,9 +17,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.city_list.ui.CitiesListDestination
-import com.example.city_list.ui.CitiesListScreen
-import com.example.city_weather.ui.CityWeatherDestination
+import com.example.city_list.api.CitiesListDestination
+import com.example.city_list.api.CitiesListScreen
+import com.example.city_weather.api.CityWeatherDestination
+import com.example.city_weather.api.CityWeatherScreen
 import com.example.design.theme.WeatherAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -73,7 +74,7 @@ private fun WeatherNavHost(
 
         composable<CityWeatherDestination> { navBackStackEntry ->
             val route = navBackStackEntry.toRoute<CityWeatherDestination>()
-            com.example.city_weather.ui.CityWeatherScreen(
+            CityWeatherScreen(
                 cityName = route.cityName,
                 latitude = route.latitude,
                 longitude = route.longitude,
