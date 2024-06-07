@@ -17,10 +17,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.weatherapp.ui.citieslist.CitiesListDestination
-import com.example.weatherapp.ui.citieslist.CitiesListScreen
-import com.example.weatherapp.ui.cityweather.CityWeatherDestination
-import com.example.weatherapp.ui.cityweather.CityWeatherScreen
+import com.example.city_list.ui.CitiesListDestination
+import com.example.city_list.ui.CitiesListScreen
+import com.example.city_weather.ui.CityWeatherDestination
 import com.example.design.theme.WeatherAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +36,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WeatherAppTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     color = MaterialTheme.colorScheme.background,
                     modifier = Modifier
@@ -62,18 +60,20 @@ private fun WeatherNavHost(
         composable<CitiesListDestination> { navBackStackEntry ->
             CitiesListScreen(
                 onCityClick = { city ->
-                    navController.navigateSingleTopTo(CityWeatherDestination(
-                        cityName = city.name,
-                        latitude = city.latitude,
-                        longitude = city.longitude,
-                    ))
+                    navController.navigateSingleTopTo(
+                        CityWeatherDestination(
+                            cityName = city.name,
+                            latitude = city.latitude,
+                            longitude = city.longitude,
+                        )
+                    )
                 }
             )
         }
 
         composable<CityWeatherDestination> { navBackStackEntry ->
             val route = navBackStackEntry.toRoute<CityWeatherDestination>()
-            CityWeatherScreen(
+            com.example.city_weather.ui.CityWeatherScreen(
                 cityName = route.cityName,
                 latitude = route.latitude,
                 longitude = route.longitude,

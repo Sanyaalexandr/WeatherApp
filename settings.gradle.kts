@@ -23,3 +23,5 @@ rootProject.name = "WeatherApp"
 include(":app")
 include(":features:city-list")
 include(":design")
+include(":core")
+include(":features:city-weather")
