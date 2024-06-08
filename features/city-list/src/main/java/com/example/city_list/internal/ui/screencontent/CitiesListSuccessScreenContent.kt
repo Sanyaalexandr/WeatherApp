@@ -90,7 +90,10 @@ internal fun CitiesListSuccessScreenContent(
                 modifier = Modifier
                     .fillMaxSize()
             ) {
-                items(cities) { city ->
+                items(
+                    cities,
+                    key = { city -> city.id }
+                ) { city ->
                     CityItem(
                         city = city,
                         onClick = onCityClick,
