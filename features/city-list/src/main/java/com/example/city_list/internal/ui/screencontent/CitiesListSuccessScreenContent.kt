@@ -53,11 +53,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.city_list.api.City
+import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.launch
 
 @Composable
 internal fun CitiesListSuccessScreenContent(
-    cities: List<City>,
+    cities: ImmutableList<City>,
     onCityClick: (City) -> Unit,
 ) {
     val listState: LazyListState = rememberLazyListState()

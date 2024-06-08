@@ -1,25 +1,31 @@
 package com.example.city_list.internal.ui
 
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.city_list.api.City
 import com.example.city_list.internal.data.model.CityDTO
 import com.example.city_list.internal.data.repository.CitiesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@Immutable
 internal sealed interface CitiesListScreenState {
     data object Loading : CitiesListScreenState
     data object Error : CitiesListScreenState
     data class Success(
-        val cities: List<City> = emptyList(),
+        val cities: ImmutableList<City> = persistentListOf(),
     ) : CitiesListScreenState
 }
 
+@Immutable
 internal sealed interface CitiesListScreenEvent {
     data object Update : CitiesListScreenEvent
 }
@@ -57,7 +63,7 @@ internal class CitiesListViewModel @Inject constructor(
                         _screenState.update { CitiesListScreenState.Error }
                     } else {
                         onSuccess(
-                            cities = cities.mapToCities()
+                            cities = cities.mapToCities().toImmutableList()
                         )
                     }
                 }
@@ -68,7 +74,7 @@ internal class CitiesListViewModel @Inject constructor(
         loadCities()
     }
 
-    private fun onSuccess(cities: List<City>) {
+    private fun onSuccess(cities: ImmutableList<City>) {
         _screenState.update { currentState ->
             if (currentState is CitiesListScreenState.Success) {
                 currentState.copy(

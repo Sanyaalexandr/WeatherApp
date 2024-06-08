@@ -22,6 +22,7 @@ navigationCompose = "2.8.0-beta02"
 appcompat = "1.6.1"
 material = "1.12.0"
 jetbrainsKotlinJvm = "1.9.0"
+kotlinxCollectionsImmutable = "0.3.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -53,6 +54,7 @@ ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", vers
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -1,5 +1,6 @@
 package com.example.city_weather.internal.ui
 
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.city_weather.internal.data.repository.WeatherRepository
@@ -11,6 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.math.round
 
+@Immutable
 internal sealed interface CityWeatherScreenState {
     data object Loading: CityWeatherScreenState
     data object Error: CityWeatherScreenState
@@ -19,6 +21,7 @@ internal sealed interface CityWeatherScreenState {
     ): CityWeatherScreenState
 }
 
+@Immutable
 internal sealed interface CityWeatherScreenEvent {
     data object Update: CityWeatherScreenEvent
     data class SelectCityWeather(
